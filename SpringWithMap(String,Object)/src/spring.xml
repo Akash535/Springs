@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.bean.Player" id="p1">
+		<property name="jno" value="7"></property>
+		<property name="playerName" value="Dhoni"></property>
+		<property name="countryName" value="India"></property>
+	</bean>
+	<bean class="com.bean.Player" id="p2">
+		<property name="jno" value="45"></property>
+		<property name="playerName" value="Rohit"></property>
+		<property name="countryName" value="India"></property>
+	</bean>
+	<bean class="com.bean.Player" id="p3">
+		<property name="jno" value="18"></property>
+		<property name="playerName" value="Virat"></property>
+		<property name="countryName" value="India"></property>
+	</bean>
+	<bean class="com.bean.IPLTeam" id="ipl">
+		<property name="p">
+			<map>
+				<!-- 
+					if we have primitive data type  or string
+					key-ref
+					value-ref
+					if we have object of the class
+				 -->
+				 <entry key="CSK" value-ref="p1"></entry>
+				 <entry key="MI" value-ref="p2"></entry>
+				 <entry key="RCB" value-ref="p3"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>
